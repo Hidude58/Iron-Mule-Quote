@@ -1,89 +1,77 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#111111" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Iron Mule Quote" />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="apple-touch-icon" href="icon-192.png" />
-  <title>Iron Mule Quote</title>
-  <style>
-    :root{--gold:#c69a3a;--gold2:#f0cf7a;--bg:#111;--panel:#1b1b1b;--panel2:#151515;--border:#343434;--text:#f4f4f4;--muted:#aaa49b;--danger:#e26464}
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
-    .wrap{max-width:980px;margin:auto;padding:16px}
-    .hero{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:8px 0 18px;flex-wrap:wrap}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:56px;height:56px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-size:28px;color:var(--gold2);background:#0d0d0d}
-    h1{font-size:28px;margin:0;font-weight:900;letter-spacing:.02em}.sub{color:var(--muted);font-size:13px;margin-top:4px}
-    .tag{border:1px solid var(--border);border-radius:999px;padding:8px 12px;font-size:12px}
-    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
-    .card{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:16px}
-    .title{color:var(--gold);font-size:13px;letter-spacing:.08em;font-weight:900;text-transform:uppercase;margin:0 0 12px}
-    .fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
-    input,select,button{font:inherit}
-    input,select{width:100%;min-height:46px;background:#101010;color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-size:16px;outline:none}
-    input:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(198,154,58,.15)}
-    .wide{grid-column:1/-1}.upload{border:1.5px dashed var(--gold);border-radius:14px;padding:14px;text-align:center;background:#17140d}.upload input{background:transparent;border:0;padding:6px;min-height:auto}
-    .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.thumbs img{width:100%;aspect-ratio:1.2/1;object-fit:cover;border-radius:9px;border:1px solid var(--border)}
-    .hint,.notice{font-size:12px;line-height:1.45;color:var(--muted)}
-    .metric{display:flex;justify-content:space-between;align-items:end;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)}.metric:last-child{border-bottom:0}.metric span{font-size:13px;color:var(--muted)}.metric strong{font-size:20px}
-    .quote{margin-top:14px;border:2px solid var(--gold);border-radius:16px;padding:16px;background:#0e0e0e}.quote small{color:#d8bf80;font-weight:800;letter-spacing:.1em}.price{font-size:46px;font-weight:950;color:var(--gold2);line-height:1;margin:8px 0}.profit{font-size:13px;color:#ddd}
-    .pills{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.pill{border:1px solid var(--border);background:var(--panel2);border-radius:999px;padding:7px 9px;font-size:12px}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.btn{border-radius:10px;min-height:46px;padding:0 16px;font-weight:850;cursor:pointer}.primary{background:var(--gold);color:#111;border:1px solid var(--gold)}.secondary{background:transparent;color:var(--text);border:1px solid var(--border)}
-    .install{display:none;margin-bottom:14px}.install.show{display:block}.install button{width:100%}
-    .footer{font-size:11px;color:var(--muted);padding:16px 2px 4px;text-align:center}
-    @media(max-width:760px){.grid{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.wide{grid-column:auto}.wrap{padding:12px}.price{font-size:40px}.hero{align-items:flex-start}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#c69a3a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Iron Mule">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<title>Iron Mule Quote</title>
+<style>
+:root{--gold:#c89a39;--gold2:#efcf7a;--bg:#0c0c0c;--panel:#171717;--panel2:#202020;--line:#343434;--text:#f5f2e9;--muted:#aaa69d;--good:#62c98a;--bad:#e56d6d;--warn:#e2b85a}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}.app{max-width:1000px;margin:auto;padding:16px 14px 96px}.top{display:flex;gap:12px;align-items:center;margin:8px 0 16px}.logo{width:54px;height:54px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-size:28px;color:var(--gold2);background:#111}.title{font-size:27px;font-weight:950;line-height:1}.tag{font-size:12px;color:var(--muted);margin-top:5px}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;position:sticky;top:0;z-index:5;background:rgba(12,12,12,.94);padding:8px 0 10px;backdrop-filter:blur(8px)}button,.btn,input,select,textarea{font:inherit}button,.btn{min-height:46px;border:1px solid var(--line);border-radius:11px;background:var(--panel2);color:var(--text);font-weight:800;padding:10px 13px;cursor:pointer}.tabs button.active,.primary{background:var(--gold);border-color:var(--gold);color:#111}.danger{color:#ff9292}.grid{display:grid;grid-template-columns:1.08fr .92fr;gap:14px}.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:16px;margin-bottom:14px}.section{font-size:13px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:0 0 13px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:11px}.wide{grid-column:1/-1}label{display:block;font-size:12px;font-weight:800;margin-bottom:5px;color:#ddd8cc}input,select,textarea{width:100%;min-height:46px;border:1px solid var(--line);border-radius:10px;background:#101010;color:var(--text);padding:10px 11px;font-size:16px;outline:none}textarea{min-height:84px;resize:vertical}input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,154,57,.15)}.upload{border:1.5px dashed var(--gold);border-radius:14px;padding:13px;background:#15130d}.upload input{border:0;padding:2px;background:transparent;min-height:36px}.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}.thumbs img{width:100%;aspect-ratio:1.2/1;object-fit:cover;border-radius:9px;border:1px solid var(--line)}.small{font-size:12px;color:var(--muted);line-height:1.4}.status{padding:9px 10px;border-radius:10px;font-size:12px;background:#111;border:1px solid var(--line);margin-top:9px}.status.good{color:var(--good);border-color:#28583a}.status.bad{color:#ff9999;border-color:#612e2e}.status.work{color:var(--warn);border-color:#6d5723}.analysis-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:11px}.pill{padding:9px 10px;border:1px solid var(--line);border-radius:11px;background:#111;font-size:12px}.pill b{display:block;color:var(--gold2);font-size:14px;margin-top:2px}.items{margin:9px 0 0;padding-left:19px;color:#ddd8cc;font-size:13px}.metric{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid var(--line);padding:10px 0}.metric span{font-size:12px;color:var(--muted)}.metric strong{font-size:20px}.quote{border:2px solid var(--gold);border-radius:15px;background:#0f0f0f;padding:16px;margin-top:14px}.quote .big{font-size:45px;line-height:1;font-weight:950;color:var(--gold2);margin:5px 0 8px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.actions button{flex:1;min-width:125px}.history{display:grid;gap:10px}.job{border:1px solid var(--line);border-radius:14px;padding:13px;background:var(--panel)}.jobtop{display:flex;justify-content:space-between;gap:10px}.jobname{font-weight:900}.jobquote{font-size:24px;font-weight:950;color:var(--gold2)}.jobmeta{color:var(--muted);font-size:12px;margin-top:4px}.jobbuttons{display:flex;gap:7px;margin-top:10px}.jobbuttons button{min-height:38px;padding:6px 10px;font-size:12px}.empty{text-align:center;color:var(--muted);padding:30px 10px}.hidden{display:none!important}.settings-note{padding:12px;background:#111;border-left:3px solid var(--gold);border-radius:8px;font-size:12px;color:#d5d0c5;line-height:1.5}.bottom-save{position:fixed;left:0;right:0;bottom:0;background:rgba(12,12,12,.96);border-top:1px solid var(--line);padding:9px 14px calc(9px + env(safe-area-inset-bottom));display:flex;gap:8px;z-index:8}.bottom-save>div{max-width:972px;width:100%;margin:auto;display:flex;gap:8px}.bottom-save button{flex:1}.install{display:none;margin-bottom:12px}.install.show{display:block}@media(max-width:760px){.app{padding-left:10px;padding-right:10px}.grid{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.wide{grid-column:auto}.analysis-grid{grid-template-columns:1fr 1fr}.quote .big{font-size:40px}.tabs button{font-size:12px;padding:8px 5px}.thumbs{grid-template-columns:repeat(2,1fr)}}
+</style>
 </head>
 <body>
-<div class="wrap">
-  <div class="hero">
-    <div class="brand"><div class="logo">♞</div><div><h1>IRON MULE QUOTE</h1><div class="sub">Mobile junk removal estimator</div></div></div>
-    <div class="tag">You Call. We Haul.</div>
-  </div>
+<main class="app">
+  <div class="top"><div class="logo">♞</div><div><div class="title">IRON MULE QUOTE</div><div class="tag">AI-assisted hauling estimates • You Call. We Haul.</div></div></div>
+  <div id="installBox" class="card install"><b>Install Iron Mule Quote</b><div class="small" style="margin:5px 0 9px">Add this app to your phone for quick access.</div><button id="installBtn" class="primary">Install App</button></div>
+  <nav class="tabs"><button data-tab="estimate" class="active">New Quote</button><button data-tab="history">Jobs</button><button data-tab="settings">Settings</button></nav>
 
-  <div id="installBox" class="install"><button id="installBtn" class="btn primary" type="button">Install Iron Mule Quote</button></div>
+  <section id="tab-estimate">
+    <div class="grid">
+      <div>
+        <div class="card"><h2 class="section">Customer & Job</h2><div class="fields">
+          <div><label for="customerName">Customer name</label><input id="customerName" placeholder="John Smith"></div>
+          <div><label for="customerPhone">Phone</label><input id="customerPhone" inputmode="tel" placeholder="(555) 123-4567"></div>
+          <div class="wide"><label for="address">Pickup address</label><input id="address" placeholder="123 Main St"></div>
+          <div><label for="jobType">Job type</label><select id="jobType"><option value="junk">Junk removal</option><option value="estate">Estate / property cleanout</option><option value="construction">Construction debris</option><option value="yard">Yard waste</option><option value="appliance">Appliance / furniture</option></select></div>
+          <div><label for="loadPct">Trailer use</label><select id="loadPct"><option value="0.15">Small pickup (~15%)</option><option value="0.25">1/4 load</option><option value="0.5" selected>1/2 load</option><option value="0.75">3/4 load</option><option value="1">Full load</option><option value="1.25">1.25 loads</option><option value="1.5">1.5 loads</option><option value="2">2 loads</option></select></div>
+          <div class="wide"><label for="notes">Notes</label><textarea id="notes" placeholder="Stairs, gate access, unusually heavy items, etc."></textarea></div>
+        </div></div>
 
-  <div class="grid">
-    <section class="card">
-      <h2 class="title">Job Details</h2>
-      <div class="fields">
-        <div class="wide upload"><label for="photos">Upload job photos</label><input id="photos" type="file" accept="image/*" multiple capture="environment"><div class="hint">Take photos or choose up to 5 from your phone.</div><div id="thumbs" class="thumbs"></div></div>
-        <div><label for="jobType">Job type</label><select id="jobType"><option value="junk">Junk removal</option><option value="estate">Estate / property cleanout</option><option value="construction">Construction debris</option><option value="yard">Yard waste</option><option value="appliance">Appliance / furniture pickup</option></select></div>
-        <div><label for="loadPct">Estimated trailer use</label><select id="loadPct"><option value="0.15">Small pickup (~15%)</option><option value="0.25">1/4 load</option><option value="0.5" selected>1/2 load</option><option value="0.75">3/4 load</option><option value="1">Full load</option><option value="1.25">More than one load</option></select></div>
-        <div><label for="miles">Round-trip miles</label><input id="miles" type="number" inputmode="decimal" min="0" max="1000" value="34"></div>
-        <div><label for="mileRate">Vehicle cost / mile</label><input id="mileRate" type="number" inputmode="decimal" min="0" step="0.05" value="1.10"></div>
-        <div><label for="dumpFee">Dump / disposal cost</label><input id="dumpFee" type="number" inputmode="decimal" min="0" value="72"></div>
-        <div><label for="laborHours">Estimated labor hours</label><input id="laborHours" type="number" inputmode="decimal" min="0" step="0.25" value="1.5"></div>
-        <div><label for="laborRate">Labor rate / hour</label><input id="laborRate" type="number" inputmode="decimal" min="0" value="40"></div>
-        <div><label for="specialFee">Heavy / special-item fee</label><input id="specialFee" type="number" inputmode="decimal" min="0" value="25"></div>
-        <div><label for="margin">Estimate / profit margin %</label><input id="margin" type="number" inputmode="decimal" min="0" value="10"></div>
-        <div><label for="minimum">Minimum job price</label><input id="minimum" type="number" inputmode="decimal" min="0" value="95"></div>
+        <div class="card"><h2 class="section">Photos & AI Analysis</h2>
+          <div class="upload"><label for="photos">Take or upload 1–5 job photos</label><input id="photos" type="file" accept="image/*" capture="environment" multiple><div class="small">The app compresses images before sending them to your secure AI endpoint.</div><div id="thumbs" class="thumbs"></div></div>
+          <div class="actions"><button id="analyzeBtn" type="button" class="primary">Analyze Photos with AI</button></div>
+          <div id="aiStatus" class="status">Upload photos, then tap <b>Analyze Photos with AI</b>.</div>
+          <div class="analysis-grid"><div class="pill">Trailer usage<b id="analysisLoad">Manual</b></div><div class="pill">Weight<b id="analysisWeight">Manual</b></div><div class="pill">Labor difficulty<b id="analysisLabor">Manual</b></div><div class="pill">AI confidence<b id="analysisConfidence">—</b></div></div>
+          <ul id="detectedItems" class="items"></ul>
+          <div id="aiNotes" class="small" style="margin-top:8px"></div>
+        </div>
+
+        <div class="card"><h2 class="section">Mileage & Costs</h2><div class="fields">
+          <div><label for="miles">Round-trip miles</label><input id="miles" type="number" min="0" step="1" value="34"></div>
+          <div><label for="mileRate">Cost per mile</label><input id="mileRate" type="number" min="0" step="0.05" value="1.10"></div>
+          <div><label for="dumpFee">Dump cost</label><input id="dumpFee" type="number" min="0" step="1" value="72"></div>
+          <div><label for="laborHours">Labor hours</label><input id="laborHours" type="number" min="0" step="0.25" value="1.5"></div>
+          <div><label for="laborRate">Labor cost/hour</label><input id="laborRate" type="number" min="0" step="1" value="40"></div>
+          <div><label for="specialFee">Heavy/special fees</label><input id="specialFee" type="number" min="0" step="1" value="25"></div>
+        </div></div>
       </div>
-      <div class="pills"><div class="pill" id="analysisLoad">~50% trailer</div><div class="pill" id="analysisLabor">Medium labor</div><div class="pill" id="analysisWeight">~700–1,000 lb</div><div class="pill" id="analysisConfidence">Manual estimate</div></div>
-      <p class="notice">Photo AI is not connected yet. The app stores your pricing settings on this phone and calculates quotes offline.</p>
-    </section>
 
-    <aside class="card">
-      <h2 class="title">Estimate</h2>
-      <div class="metric"><span>Load / volume charge</span><strong id="loadCost">$0</strong></div>
-      <div class="metric"><span>Mileage cost</span><strong id="mileageCost">$0</strong></div>
-      <div class="metric"><span>Labor</span><strong id="laborCost">$0</strong></div>
-      <div class="metric"><span>Dump fee</span><strong id="dumpCost">$0</strong></div>
-      <div class="metric"><span>Special fees</span><strong id="specialCost">$0</strong></div>
-      <div class="metric"><span>Internal subtotal</span><strong id="subtotal">$0</strong></div>
-      <div class="quote"><small>RECOMMENDED CUSTOMER QUOTE</small><div id="quote" class="price">$0</div><div class="profit">Estimated gross spread: <strong id="profit">$0</strong></div></div>
-      <div class="actions"><button id="recalc" class="btn primary" type="button">Recalculate</button><button id="reset" class="btn secondary" type="button">Reset</button></div>
-      <p class="notice">Quotes round up to the nearest $25. Treat this as an estimate until you inspect the load.</p>
-    </aside>
-  </div>
-  <div class="footer">Iron Mule Quote • PWA prototype</div>
-</div>
-<script src="app.js"></script>
-</body>
-</html>
+      <aside>
+        <div class="card"><h2 class="section">Estimate</h2>
+          <div class="metric"><span>Load / volume</span><strong id="loadCost">$0</strong></div><div class="metric"><span>Mileage</span><strong id="mileageCost">$0</strong></div><div class="metric"><span>Labor</span><strong id="laborCost">$0</strong></div><div class="metric"><span>Dump fee</span><strong id="dumpCost">$0</strong></div><div class="metric"><span>Special fees</span><strong id="specialCost">$0</strong></div><div class="metric"><span>Internal subtotal</span><strong id="subtotal">$0</strong></div>
+          <div class="quote"><div class="small" style="text-transform:uppercase;letter-spacing:.1em;color:#d7bd7a;font-weight:900">Recommended customer quote</div><div id="quote" class="big">$0</div><div class="small">Estimated gross spread: <b id="profit">$0</b></div></div>
+          <div class="actions"><button id="recalc" type="button">Recalculate</button><button id="newQuote" type="button">Clear Job</button></div>
+          <div class="small" style="margin-top:10px">AI estimates are advisory. Confirm unusual/heavy items, access conditions, disposal restrictions, and actual dump pricing before giving a binding price.</div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="tab-history" class="hidden"><div class="card"><h2 class="section">Saved Jobs & Quotes</h2><div id="historyList" class="history"></div></div></section>
+
+  <section id="tab-settings" class="hidden">
+    <div class="card"><h2 class="section">Business Pricing</h2><div class="fields">
+      <div><label for="fullJunk">Full-load junk base</label><input id="fullJunk" type="number" min="0" step="25" value="550"></div><div><label for="fullEstate">Full-load estate base</label><input id="fullEstate" type="number" min="0" step="25" value="625"></div><div><label for="fullConstruction">Full-load construction base</label><input id="fullConstruction" type="number" min="0" step="25" value="675"></div><div><label for="fullYard">Full-load yard base</label><input id="fullYard" type="number" min="0" step="25" value="475"></div><div><label for="fullAppliance">Full-load furniture/appliance base</label><input id="fullAppliance" type="number" min="0" step="25" value="500"></div><div><label for="margin">Margin / uncertainty %</label><input id="margin" type="number" min="0" step="1" value="10"></div><div><label for="minimum">Minimum job price</label><input id="minimum" type="number" min="0" step="5" value="95"></div><div><label for="roundTo">Round quotes up to</label><select id="roundTo"><option value="5">$5</option><option value="10">$10</option><option value="25" selected>$25</option><option value="50">$50</option></select></div>
+    </div></div>
+    <div class="card"><h2 class="section">AI Connection</h2><div class="settings-note"><b>Do not put your OpenAI API key in this page or GitHub.</b> Paste only the public URL of your secure Cloudflare Worker. The included <code>worker/worker.js</code> keeps the API key server-side.</div><div style="margin-top:12px"><label for="aiEndpoint">AI Worker URL</label><input id="aiEndpoint" type="url" placeholder="https://iron-mule-ai.YOURNAME.workers.dev"></div><div id="endpointStatus" class="status">AI endpoint not configured.</div></div>
+    <div class="card"><h2 class="section">Data</h2><div class="actions"><button id="exportBtn" type="button">Export Jobs JSON</button><button id="clearHistoryBtn" class="danger" type="button">Delete All Saved Jobs</button><button id="resetSettings" type="button">Reset Pricing</button></div><div class="small" style="margin-top:10px">Jobs and pricing are stored locally on this device/browser. They are not synced to another phone yet.</div></div>
+  </section>
+</main>
+<div class="bottom-save"><div><button id="saveJob" class="primary" type="button">Save Quote / Job</button></div></div>
+<script src="./app.js"></script>
+</body></html>

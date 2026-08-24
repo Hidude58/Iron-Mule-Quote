@@ -1,13 +1,14 @@
 {
   "name": "Iron Mule Quote",
   "short_name": "Iron Mule",
+  "description": "AI-assisted junk removal estimating and quote history for Iron Mule Hauling Co.",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#111111",
-  "theme_color": "#111111",
-  "description": "Mobile junk removal quote estimator for Iron Mule Hauling Co.",
+  "background_color": "#101010",
+  "theme_color": "#c69a3a",
   "icons": [
-    {"src":"icon-192.png","sizes":"192x192","type":"image/png"},
-    {"src":"icon-512.png","sizes":"512x512","type":"image/png"}
+    {"src":"./icon-192.png","sizes":"192x192","type":"image/png"},
+    {"src":"./icon-512.png","sizes":"512x512","type":"image/png"}
   ]
 }
