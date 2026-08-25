@@ -1,6 +1,0 @@
-name = "iron-mule-ai"
-main = "worker.js"
-compatibility_date = "2026-08-24"
-
-[vars]
-ALLOWED_ORIGIN = "https://hidude58.github.io"
